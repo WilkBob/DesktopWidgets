@@ -5,12 +5,20 @@ let widgetCount = 0;
 let activeWidget = null;
 let dragging = false;
 let resizing = false;
+
+
+//event listeners
+
+//dragging and resizing end on mouseup
 document.addEventListener('mouseup', () => {
     dragging = false;
     resizing = false;
     snapToGrid();
 });
+
+//dragging and resizing on mousemove
 document.addEventListener('mousemove', handleMouseMove);
+
 function handleMouseMove(event) {
     mouseX = event.clientX;
     mouseY = event.clientY; 
@@ -22,10 +30,11 @@ function handleMouseMove(event) {
     }
 }
 
+//spawn widget on button click
 const widgetSpawnButton = document.querySelector('#btn');
 widgetSpawnButton.addEventListener('click', spawnWidget);
 
-   
+   //functions for widget creation and manipulation below here
 function spawnWidget() {
     // increment widget count, create widget, add properties, add position
     widgetCount++;
@@ -89,7 +98,7 @@ function deleteWidget(id) {
     widgetCount--;
 }
 
-//drag widget to new position
+
 
 
 
