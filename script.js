@@ -284,7 +284,7 @@ function addResizeButton(widget){
     const resizeButton = document.createElement('div');
     resizeButton.classList.add('resize-button');
     resizeButton.classList.add('button');
-    resizeButton.textContent = '+';
+    resizeButton.textContent = '⇲';
     resizeButton.addEventListener('mousedown', () => {
         activeWidget = widget.id;
         resizing = true;
