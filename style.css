@@ -9,7 +9,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00e0, #ff0000);
+    background: linear-gradient(45deg, #d87575, #eeb281, #f7f6c1, #83df92, #00ffd5, #4c7edb, #a866ee, #fa9bef, #ff8585);
     min-height: 100vh;
     background-size: 400% 400% ;
     animation: animateBackgroundGradient 15s infinite;
