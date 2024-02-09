@@ -5,8 +5,12 @@ let widgetCount = 0;
 let activeWidget = null;
 let dragging = false;
 let resizing = false;
-
-
+let latitude = 0;
+let longitude = 0;
+navigator.geolocation.getCurrentPosition((position) => {
+    latitude = position.coords.latitude;
+    longitude = position.coords.longitude;
+});
 //event listeners
 
 //dragging and resizing end on mouseup
@@ -344,10 +348,9 @@ setInterval(updateClocks, 1000);
 
 //weather
 const apiKey = '57d1e6c999423bfdd98c0b877524d639';
- let zipCode = '83843'
 
  async function getWeatherData() {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
     const data = await response.json();
     return data;
 }
